@@ -11,7 +11,7 @@
 
 const intro = babeViews.intro({
     trials: 1,
-    name: 'intro',
+    name: 'Welcome to _babe/SimonTask!',
     text:   `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy <br>
 			eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</strong>
     <br>
@@ -26,8 +26,15 @@ const instructions = babeViews.instructions({
     trials: 1,
     name: 'instrucions',
     title: 'General Instructions',
-    text:  `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy <br>
-			eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.`,
+    text:  `In this experiment you will be shown a square or a circle, either on the left or right part of your screen.
+            Whenever you see a square, please press the <strong>"q"</strong> key on your keyboard, whenever you see 
+            a circle, please press the <strong>"p"</strong> key - regardless of the position of the symbol. 
+            <br>
+            Plese try to press the key as soon as possible while also trying to make as few errors as you can.
+            <br> 
+            <br>
+            Before the actual experiment starts, you'll do a few examples of this task in order to familiarize 
+            yourself with it.`,
     buttonText: 'Next'
 });
 
