@@ -11,7 +11,8 @@
 
 const intro = babeViews.intro({
     trials: 1,
-    name: 'Welcome to _babe/SimonTask!',
+    name: 'intro',
+    title: 'Welcome to the _babe SimonTask',
     text:   `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy <br>
 			eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</strong>
     <br>
@@ -24,7 +25,7 @@ const intro = babeViews.intro({
 
 const instructions = babeViews.instructions({
     trials: 1,
-    name: 'instrucions',
+    name: 'instructions',
     title: 'General Instructions',
     text:  `In this experiment you will be shown a square or a circle, either on the left or right part of your screen.
             Whenever you see a square, please press the <strong>"q"</strong> key on your keyboard, whenever you see 
