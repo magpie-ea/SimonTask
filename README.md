@@ -1,31 +1,3 @@
-# Departure Point
+# _babe - SimonTask
 
-This repository contains a minimal example of a _babe experiment. It can be used as a quick-start departure point when programming a new _babe experiment from scratch.
-
-## Online demo
-
-You can have a look at the experiment [here](https://departure-point.netlify.com/) 
-
-## How to set up an experiment with _babe (quick start quide)
-
-### Obtaining the `departure point`
-
-1. install npm by following these [instructions](https://www.npmjs.com/get-npm)
-2. download or clone this github repository: https://github.com/babe-project/departure-point
-   - e.g. type `git clone https://github.com/babe-project/departure-point.git`
-3. change the folder name `departure-point` to whatever you like
-   - let's say you call is `my-exp`, e.g. by typing `mv departure-point my-exp`
-4. go to your folder `my-exp`, e.g., by typing `cd my-exp`
-5. now type `npm install`; this will download the Javascript packages with the most current version of _babe
-6. you can have a look at the example experiment by opening the file `index.html` now
-7. you can now start editing to create your own experiment
-
-### Changing the `departure point` to your own experiment
-
-- you can find more general explanations of the elements relevant for setting up a _babe experiment [here](https://github.com/babe-project/babe-project#Usage)
-
-- usually, you might just want to manipulate the following files:
-	- `main.js` :: contains the experiment structure and general information about deployment
-	- `views.js` :: defines the different kinds of tasks, or, more generally, anything users will engage with on the screen
-	- `custom_views.js` :: contains user-defined special-purpose tasks (called 'views' here)
-	- `trials.js` :: (optional) contains information to realize different trials of a task (e.g., names of pictures, test sentences, questionaire questions etc.)
+The Simon task is a so-called “choice reaction task” (as compared to a “simple reaction task” such as a Go/No-Go task). In its most basic form it is a 2x2 design. Let’s suppose the relevant stimulus dimension for making a giving a response is shape: “if you see a **circle**, press _left_; if you see a **square**, press _right_”. The irrelevant stimulus dimension is location: whether the stimulus appears of the left or right side of the monitor. Thus, there are 2x2=4 combinations: 2 (shape: _circle_, _square_) x 2 (location: _left_, _right_). In a Simon task the irrelevant response dimension (perceiving the Stimulus on the left, right) overlaps with the response dimension (pressing left, right). This makes the Simon task highly suitable to study the interaction between perception & action. The relevant stimulus dimension (perceiving a circle or a square) does not overlap with the response dimension. Please note that the Simon effect occurs at the level of response selection (remember, the Simon task is a choice reaction task): the irrelevant location feature of the stimulus facilitates response selection when the features overlap (as when the circle appears left or the square right) but hinders response selection when the features do not overlap (as when the circle appears right or the square left). 
