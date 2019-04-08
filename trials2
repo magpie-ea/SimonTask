@@ -1,0 +1,101 @@
+
+ 
+ const practice =  {
+    // maybe don't display a question (thus having less overall stimuli on screen")?
+    // as it is now, it might interfere with the experiment
+	  circle: [
+        {
+            question: "Press <strong>q</strong> for circle and <strong>p</strong> for square",
+            picture: "images/circle_right.png",
+            key1: 'q',
+            key2: 'p',
+			q: q_target,
+			p: p_target,
+			expected: 'circle' === p_target? p_target : q_target
+        },
+        {
+            question: "Press <strong>q</strong> for circle and <strong>p</strong> for square",
+            picture: "images/circle_left.png",
+            key1: 'q',
+            key2: 'p',
+			q: q_target,
+			p: p_target,
+			expected: 'circle' === p_target? p_target : q_target
+        }
+	  ],
+	  square: [
+		{
+			question: "Press <strong>q</strong> for circle and <strong>p</strong> for square",
+            picture: "images/square_right.png",
+            key1: 'q',
+            key2: 'p',
+			q: q_target,
+			p: p_target,
+			expected: 'square' === p_target? p_target : q_target
+		},
+		{
+			question: "Press <strong>q</strong> for circle and <strong>p</strong> for square",
+            picture: "images/square_left.png",
+            key1: 'q',
+            key2: 'p',
+			q: q_target,
+			p: p_target,
+			expected: 'square' === p_target? p_target : q_target
+		}
+	  ]
+ };
+    // the following is the counter-balance, maybe don't call it 'test' but 'counter' or similar
+    // same goes for 'practice' above in that case
+const test =  {
+	circle: [
+        {
+            question: "Press <strong>q</strong> for square and <strong>p</strong> for circle",
+            picture: "images/circle_right.png",
+            key1: 'q',
+            key2: 'p',
+			q: q_target,
+			p: p_target,
+			expected: 'circle' === p_target? p_target : q_target
+        },
+        {
+            question: "Press <strong>q</strong> for square and <strong>p</strong> for circle",
+            picture: "images/circle_left.png",
+            key1: 'q',
+            key2: 'p',
+			q: q_target,
+			p: p_target,
+			expected: 'circle' === p_target? p_target : q_target
+        }
+	],
+	square: [
+		{
+			question: "Press <strong>q</strong> for square and <strong>p</strong> for circle",
+            picture: "images/square_right.png",
+            key1: 'q',
+            key2: 'p',
+			q: q_target,
+			p: p_target,
+			expected: 'square' === p_target? p_target : q_target
+		},
+		{
+			question: "Press <strong>q</strong> for square and <strong>p</strong> for circle",
+            picture: "images/square_left.png",
+            key1: 'q',
+            key2: 'p',
+			q: q_target,
+			p: p_target,
+			expected: 'square' === p_target? p_target : q_target
+		}
+	]
+ };
+ 
+ const simonTask_info = {
+    keyPress_test:
+        _.flattenDeep(babeUtils.views.loop([babeUtils.views.loop(test.circle, 3), babeUtils.views.loop(test.square,2)],6))
+    ,
+    keyPress_practice:
+        _.flattenDeep(babeUtils.views.loop([babeUtils.views.loop(practice.circle, 2), babeUtils.views.loop(practice.square,2)],3))
+};
+
+simonTask_info.keyPress_test = _.shuffle(simonTask_info.keyPress_test)
+simonTask_info.keyPress_practice = _.shuffle(simonTask_info.keyPress_practice)
