@@ -4,6 +4,7 @@ const key_targets = _.shuffle(['circle', 'square']);
 const p_target = key_targets[0];
 const q_target = key_targets[1];
 
+
 //Error feedback if participants exceeds the time for responding 
  const count_time = function(data, next) {
      if (typeof window.timeout === 'undefined'){
@@ -98,6 +99,7 @@ const practice =  {
 	  ]
  };
 
+
 //test condition
 const test =  {
 	circle: [
@@ -177,6 +179,7 @@ const test =  {
 		}
 	]
  };
+
 
 //loops and randomisation of trials
  const simonTask_info = {
