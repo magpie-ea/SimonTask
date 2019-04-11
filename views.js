@@ -9,6 +9,7 @@
 
 */
 
+//Defining the views (instructions, begin, post questionnaire and thanks)
 const intro = babeViews.intro({
     trials: 1,
     name: 'intro',
@@ -25,10 +26,10 @@ const intro = babeViews.intro({
 });
 
 
-/* const instructions = "condition"
-
-if (p_target == 'circle') {
-	text: `1In this experiment you will be shown a <b>square</b> or a <b>circle</b>, either on the <b>left or right</b> part of your screen.
+const instructions = babeViews.instructions({
+	trials:1,
+	name: 'instructions',
+	text: `In this experiment you will be shown a <b>square</b> or a <b>circle</b>, either on the <b>left or right</b> part of your screen.
             <br>
 			Whenever you see a <b>square</b>, please press the <strong>"q"</strong> key on your keyboard, whenever you see 
             a <b>circle</b>, please press the <strong>"p"</strong> key - regardless of the position of the symbol. 
@@ -38,43 +39,8 @@ if (p_target == 'circle') {
             <br>
             Before the actual experiment starts, a <b>practice session</b> will give you the possibility to familiarize with the task.
 			An information site after the practice session will announce when the test session starts.`
-} else {
-	text: `2In this experiment you will be shown a <b>square</b> or a <b>circle</b>, either on the <b>left or right</b> part of your screen.
-            <br>
-			Whenever you see a <b>square</b>, please press the <strong>"q"</strong> key on your keyboard, whenever you see 
-            a <b>circle</b>, please press the <strong>"p"</strong> key - regardless of the position of the symbol. 
-            <br>
-            Plese try to press the key as <b>soon as possible</b> while also trying to make as <b>few errors</b> as you can.
-            <br> 
-            <br>
-            Before the actual experiment starts, a <b>practice session</b> will give you the possibility to familiarize with the task.
-			An information site after the practice session will announce when the test session starts.`
-} */
-
-const instructions = function condition(p_target) {
-
-if (p_target === 'circle') {Hallo} else {Tschüss}
-};
-	
-	
-	
-	
-	/* babeViews.instructions({
-	name: 'instructions',
-	text: "Hallo1",
-	trials: 1
-	});
-	} else {
-	babeViews.instructions({
-	name: 'instructions',
-	text: "Hallo2",
-	trials: 1
-	});
-	}
-} */
-
-
-
+});
+			
 const instruction_practice = babeViews.instructions({
     trials: 1,
 	name: 'instruction_practice',
@@ -87,7 +53,6 @@ const instruction_practice = babeViews.instructions({
 	Be as <b>fast</b> and as <b>accurate</b> as possible.`,
 	buttonText: 'Start practice'
 });
-
 
 const instruction_test = babeViews.begin({
     trials: 1,
@@ -166,22 +131,10 @@ const thanks = babeViews.thanks({
 * All about the properties of trial - https://github.com/babe-project/babe-project/blob/master/docs/views.md#properties-of-trial
 */
 
-// part of the practice sample
- const count_time = function(data, next) {
-     if (typeof window.timeout === 'undefined'){
-         window.timeout = [];
-     }
-     // clear old timeouts and remove them from the timeout array
-     clearTimeout(window.timeout[0]);
-     window.timeout.shift();
-     // add the timeout to the timeoutarray 
-     window.timeout.push(setTimeout(function(){
-         alert("You take too long");
-     }, 1000));
- };
+// Defining the trial sessions (practice and test)
  
 const practice_session = keyPress_simontask({
-    trials: 2,
+    trials: 10,
     name: 'practice_session',
     trial_type: 'KeyPress',
     data: simonTask_info.keyPress_practice,
@@ -194,7 +147,7 @@ const practice_session = keyPress_simontask({
 });
 
 const test_session = keyPress_simontask({
-	trials: 2,
+	trials: 48,
 	name: 'test_session',
 	trial_type: 'KeyPress',
 	data: simonTask_info.keyPress_test,
