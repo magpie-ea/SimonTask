@@ -1,10 +1,26 @@
+
+//Rotation of conditions (key press to circle/square)
 const key_targets = _.shuffle(['circle', 'square']);
 const p_target = key_targets[0];
 const q_target = key_targets[1];
 
+
+//Error feedback if participants exceeds the time for responding 
+ const count_time = function(data, next) {
+     if (typeof window.timeout === 'undefined'){
+         window.timeout = [];
+     }
+     // clear old timeouts and remove them from the timeout array
+     clearTimeout(window.timeout[0]);
+     window.timeout.shift();
+     // add the timeout to the timeoutarray 
+     window.timeout.push(setTimeout(function(){
+         alert("You take too long");
+     }, 1000));
+ };
+
+//practice condition
 const practice =  {
-    // maybe don't display a question (thus having less overall stimuli on screen")?
-    // as it is now, it might interfere with the experiment
 	  circle: [
         {
             key1: 'q',
@@ -82,8 +98,9 @@ const practice =  {
 		}
 	  ]
  };
-    // the following is the counter-balance, maybe don't call it 'test' but 'counter' or similar
-    // same goes for 'practice' above in that case
+
+
+//test condition
 const test =  {
 	circle: [
         {
@@ -163,6 +180,8 @@ const test =  {
 	]
  };
 
+
+//loops and randomisation of trials
  const simonTask_info = {
     keyPress_test:
         _.flattenDeep(babeUtils.views.loop([babeUtils.views.loop(practice.circle, 2), babeUtils.views.loop(practice.square,2)],2))
