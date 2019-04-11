@@ -174,4 +174,3 @@ const test =  {
 simonTask_info.keyPress_test = _.shuffle(simonTask_info.keyPress_test)
 simonTask_info.keyPress_practice = _.shuffle(simonTask_info.keyPress_practice)
 
-
