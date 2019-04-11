@@ -133,17 +133,23 @@ const thanks = babeViews.thanks({
 */
 
 // Defining the trial sessions (practice and test)
+
+ /* 
+ Do we actually want to hide the stimulus again? DeHower (2003) didn't:
+    "A white fixation cross for 500 ms; the word until a correct response was given; 
+     if the participant made an incorrect response, a red cross appeared underneath 
+     the word until the participant pressed the correct key."
+For that reason, I also increased the durations a bit towards those numbers. 
+*/
 const practice_session = keyPress_simontask({
     trials: 10,
     name: 'practice_session',
     trial_type: 'KeyPress',
     data: simonTask_info.keyPress_practice,
-	fix_duration: 100,
-	stim_duration: 200,
-	pause: 400,
-	hook: {
-		after_response_enabled: count_time
-		}
+	fix_duration: 200,
+	stim_duration: 500,
+	pause: 500,
+	//hook: {after_response_enabled: count_time}
 });
 
 const test_session = keyPress_simontask({
@@ -151,10 +157,8 @@ const test_session = keyPress_simontask({
 	name: 'test_session',
 	trial_type: 'KeyPress',
 	data: simonTask_info.keyPress_test,
-	fix_duration: 100,
-	stim_duration: 200,
-	pause: 400,
-	hook: {
-		after_response_enabled: count_time
-		}
+	fix_duration: 200,
+	stim_duration: 500,
+	pause: 500,
+	//hook: {after_response_enabled: count_time}
 });
