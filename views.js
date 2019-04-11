@@ -12,48 +12,95 @@
 const intro = babeViews.intro({
     trials: 1,
     name: 'intro',
-    title: 'Welcome to the _babe SimonTask',
-    text:   `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy <br>
-			eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</strong>
-    <br>
+    title: 'Welcome, nice to see you',
+    text:   `<b>Thank you for participating in advance! </b><br>
 	<br>
-	Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy <br>
-			eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</strong>
+	In the following you will conduct a so-called <b>Simon Task</b>, where your task will be ask to press a certain key dependent on the presented picture.<br>
+    <br>
+	You will need around <b>13 min</b> to complete the experiment.<br>
+	<br>
+	If you want to <b>start</b> please click on the button below to proceede with <b>detailed instructions</b>.
     `,
-    buttonText: 'begin the experiment'
+    buttonText: 'Begin the experiment'
 });
 
-const instructions = babeViews.instructions({
-    trials: 1,
-    name: 'instructions',
-    title: 'General Instructions',
-    text:  `In this experiment you will be shown a square or a circle, either on the left or right part of your screen.
-            Whenever you see a square, please press the <strong>"q"</strong> key on your keyboard, whenever you see 
-            a circle, please press the <strong>"p"</strong> key - regardless of the position of the symbol. 
+
+/* const instructions = "condition"
+
+if (p_target == 'circle') {
+	text: `1In this experiment you will be shown a <b>square</b> or a <b>circle</b>, either on the <b>left or right</b> part of your screen.
             <br>
-            Plese try to press the key as soon as possible while also trying to make as few errors as you can.
+			Whenever you see a <b>square</b>, please press the <strong>"q"</strong> key on your keyboard, whenever you see 
+            a <b>circle</b>, please press the <strong>"p"</strong> key - regardless of the position of the symbol. 
+            <br>
+            Plese try to press the key as <b>soon as possible</b> while also trying to make as <b>few errors</b> as you can.
             <br> 
             <br>
-            Before the actual experiment starts, you'll do a few examples of this task in order to familiarize 
-            yourself with it.`,
-    buttonText: 'Next'
-});
+            Before the actual experiment starts, a <b>practice session</b> will give you the possibility to familiarize with the task.
+			An information site after the practice session will announce when the test session starts.`
+} else {
+	text: `2In this experiment you will be shown a <b>square</b> or a <b>circle</b>, either on the <b>left or right</b> part of your screen.
+            <br>
+			Whenever you see a <b>square</b>, please press the <strong>"q"</strong> key on your keyboard, whenever you see 
+            a <b>circle</b>, please press the <strong>"p"</strong> key - regardless of the position of the symbol. 
+            <br>
+            Plese try to press the key as <b>soon as possible</b> while also trying to make as <b>few errors</b> as you can.
+            <br> 
+            <br>
+            Before the actual experiment starts, a <b>practice session</b> will give you the possibility to familiarize with the task.
+			An information site after the practice session will announce when the test session starts.`
+} */
+
+const instructions = function condition(p_target) {
+
+if (p_target === 'circle') {Hallo} else {Tschüss}
+};
+	
+	
+	
+	
+	/* babeViews.instructions({
+	name: 'instructions',
+	text: "Hallo1",
+	trials: 1
+	});
+	} else {
+	babeViews.instructions({
+	name: 'instructions',
+	text: "Hallo2",
+	trials: 1
+	});
+	}
+} */
+
+
 
 const instruction_practice = babeViews.instructions({
     trials: 1,
 	name: 'instruction_practice',
 	title: 'Instruction Practice Session',
-    text: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy <br>
-			eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.`,
+    text: `<br>Press  <strong>"p"</strong> whenever you see a <b>square</b> and
+	<br>
+	press <strong>"q"</strong> whenever you see a <b>circle</b>.
+	<br>
+	<br>
+	Be as <b>fast</b> and as <b>accurate</b> as possible.`,
 	buttonText: 'Start practice'
 });
+
 
 const instruction_test = babeViews.begin({
     trials: 1,
 	name: 'instruction_test',
 	title: 'Instruction Test Session',
-    text: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy <br>
-			eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.`,
+    text: `<b>Very good!</b><br>
+		The next part will be the test session.
+		<br>
+		<br>Press  <strong>"p"</strong> whenever you see a <b>square</b> and
+	press <strong>"q"</strong> whenever you see a <b>circle</b>.
+	<br>
+	<br>
+	Be as <b>fast</b> and as <b>accurate</b> as possible.`,
 	buttonText: 'Start Test'
 });
 
@@ -61,9 +108,9 @@ const instructionsPostTest = babeViews.instructions({
     trials: 1,
     name: 'instructions_post_test',
     title: 'Post Questionnaire',
-    text: `Next you will see a sample <a href='/'>Post Test view</a>. 
-    The default questions and answer options are in English, however, the whole questionnaire can be translated. In the following Post Test
-    sample the questions are in German.`
+    text: `<b>Thank you so far, you are almost done!</b>
+	<br>
+	In the following you will receive a <b>post questionnaire</b>, please answer the questions. `
 });
 
 // the post questionnaire can be translated
@@ -72,7 +119,7 @@ const post_test = babeViews.postTest({
     name: 'post_test',
     title: 'Additional information',
     text: 'Answering the following questions is optional, but your answers will help us analyze our results.'
-
+	
     // You can change much of what appears here, e.g., to present it in a different language, as follows:
     // buttonText: 'Weiter',
     // age_question: 'Alter',
@@ -120,21 +167,42 @@ const thanks = babeViews.thanks({
 */
 
 // part of the practice sample
-
-const practice_session = babeViews.keyPress({
-    trials: 4,
+ const count_time = function(data, next) {
+     if (typeof window.timeout === 'undefined'){
+         window.timeout = [];
+     }
+     // clear old timeouts and remove them from the timeout array
+     clearTimeout(window.timeout[0]);
+     window.timeout.shift();
+     // add the timeout to the timeoutarray 
+     window.timeout.push(setTimeout(function(){
+         alert("You take too long");
+     }, 1000));
+ };
+ 
+const practice_session = keyPress_simontask({
+    trials: 2,
     name: 'practice_session',
     trial_type: 'KeyPress',
-    data: _.shuffle(condition_one.practice),
-	fix_duration: 500,
-	pause: 500
+    data: simonTask_info.keyPress_practice,
+	fix_duration: 100,
+	stim_duration: 200,
+	pause: 400,
+	hook: {
+		after_response_enabled: count_time
+		}
 });
 
-const test_session = babeViews.keyPress({
-	trials: 8,
+const test_session = keyPress_simontask({
+	trials: 2,
 	name: 'test_session',
 	trial_type: 'KeyPress',
-	data: _.shuffle(condition_one.test),
-	fix_duration: 500,
-	pause: 500
+	data: simonTask_info.keyPress_test,
+	fix_duration: 100,
+	stim_duration: 200,
+	pause: 400,
+	hook: {
+		after_response_enabled: count_time
+		}
 });
+

@@ -11,7 +11,7 @@ $("document").ready(function() {
     // in debug mode this returns the babe-object, which you can access in the console of your browser
     // in all other modes null will be returned
     window.babe_monitor = babeInit({
-        views_seq: [
+		views_seq:[
             intro,
             instructions,
 			instruction_practice,
