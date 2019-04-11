@@ -1,7 +1,3 @@
-const key_targets = _.shuffle(['circle', 'square']);
-const p_target = key_targets[0];
-const q_target = key_targets[1];
-
 const keyPress_simontask = function(config) {
         babeUtils.view.inspector.missingData(config, "key press");
         babeUtils.view.inspector.params(config, "key press");
