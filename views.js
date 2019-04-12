@@ -58,32 +58,20 @@ const instructionsPostTest = babeViews.instructions({
     trials: 1,
     name: 'instructions_post_test',
     title: 'Post Questionnaire',
-    text: `<b>Thank you so far, you are almost done!</b>
-	<br>
-	In the following you will receive a <b>post questionnaire</b>, please answer the questions. `
+    text: `We are almost done! Please finish the experiment by leaving some (optional) information. Make sure that you leave your student ID (a.k.a. Matrikelnummer).`
 });
 
-// the post questionnaire can be translated
 const post_test = babeViews.postTest({
     trials: 1,
     name: 'post_test',
     title: 'Additional information',
-    text: 'Answering the following questions is optional, but your answers will help us analyze our results.'
-	
-    // You can change much of what appears here, e.g., to present it in a different language, as follows:
-    // buttonText: 'Weiter',
-    // age_question: 'Alter',
-    // gender_question: 'Geschlecht',
-    // gender_male: 'männlich',
-    // gender_female: 'weiblich',
-    // gender_other: 'divers',
-    // edu_question: 'Höchster Bildungsabschluss',
-    // edu_graduated_high_school: 'Abitur',
-    // edu_graduated_college: 'Hochschulabschluss',
-    // edu_higher_degree: 'Universitärer Abschluss',
-    // languages_question: 'Muttersprache',
-    // languages_more: '(in der Regel die Sprache, die Sie als Kind zu Hause gesprochen haben)',
-    // comments_question: 'Weitere Kommentare'
+    text: 'Answering the following questions is optional, except that <strong>you have to enter your student ID if you need course credit.</strong>',
+    languages_question: '<strong>Student ID</strong>',
+    languages_more: '(obligatory for course credit!)',
+    edu_question: 'Study program',
+    edu_graduated_high_school: 'CogSci BSc',
+    edu_graduated_college: 'CogSci MSc',
+    edu_higher_degree: 'other'
 });
 
 // the 'thanks' view is crucial; never delete it; it submits the results!
