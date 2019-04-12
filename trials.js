@@ -30,8 +30,9 @@ const count_time = function(data, next) {
      window.timeout.shift();
      // add the timeout to the timeoutarray
      window.timeout.push(setTimeout(function(){
-         alert("You take too long");
-     }, 1000));
+          $(".babe-view-stimulus").addClass("babe-invisible");
+     }, 500));
+
  };
 
 //practice condition
