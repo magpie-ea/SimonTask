@@ -33,7 +33,7 @@ const keyPress_simontask = function(config) {
 
                     if (keyPressed === key1 || keyPressed === key2) {
                         let correctness;
-                        const RT = Date.now() - startingTime - pause; // measure RT before anything else
+                        const RT = Date.now() - startingTime; // measure RT before anything else
 
                         if (
                             config.data[CT].expected ===
@@ -91,15 +91,16 @@ const keyPress_simontask = function(config) {
                     }
                 };
 
-                $(".babe-view").append(answerContainerElem);
-                $("body").on("keydown", handleKeyPress);
+                //$(".babe-view").append(answerContainerElem);
+                //$("body").on("keydown", handleKeyPress);
 
                 const enableResponse = function() {
-                    // $(".babe-view").append(answerContainerElem);
-                    // $("body").on("keydown", handleKeyPress);
+                     $(".babe-view").append(answerContainerElem);
+                     $("body").on("keydown", handleKeyPress);
+                     startingTime = Date.now();
                 };
 
-                startingTime = Date.now();
+                //startingTime = Date.now();
 
                 // creates the DOM of the trial view
                 babeUtils.view.createTrialDOM(
