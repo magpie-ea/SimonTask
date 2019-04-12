@@ -116,18 +116,18 @@ For that reason, I also increased the durations a bit towards those numbers.
 const practice_session = keyPress_simontask({
     trials: 1,
     name: 'practice_session',
-    trial_type: 'KeyPress',
+    trial_type: 'practice',
     data: simonTask_info.keyPress_practice,
-	fix_duration: 200,
-	stim_duration: 500,
-	pause: 500,
-	//hook: {after_response_enabled: count_time}
+  	fix_duration: 2200,
+  	stim_duration: 500,
+  	pause: 500,
+  	//hook: {after_response_enabled: count_time}
 });
 
 const test_session = keyPress_simontask({
 	trials: 5,
 	name: 'test_session',
-	trial_type: 'KeyPress',
+	trial_type: 'main',
 	data: simonTask_info.keyPress_test,
 	fix_duration: 200,
 	stim_duration: 500,

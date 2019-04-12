@@ -5,7 +5,7 @@ const keyPress_simontask = function(config) {
             name: config.name,
             title: babeUtils.view.setter.title(config.title, ""),
             render: function(CT, babe) {
-                let pause = Math.floor(Math.random()*(2700-1200+1)+1200);
+                let pause = Math.floor(Math.random()*(1500)+1200);
                 let startingTime;
                 const question = babeUtils.view.setter.question(
                     config.data[CT].question
@@ -91,9 +91,12 @@ const keyPress_simontask = function(config) {
                     }
                 };
 
+                $(".babe-view").append(answerContainerElem);
+                $("body").on("keydown", handleKeyPress);
+
                 const enableResponse = function() {
-                    $(".babe-view").append(answerContainerElem);
-                    $("body").on("keydown", handleKeyPress);
+                    // $(".babe-view").append(answerContainerElem);
+                    // $("body").on("keydown", handleKeyPress);
                 };
 
                 startingTime = Date.now();

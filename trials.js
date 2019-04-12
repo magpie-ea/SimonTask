@@ -20,7 +20,7 @@ const key_press_instruction_message_short = p_target == 'circle' ?
 
 
 
-//Error feedback if participants exceeds the time for responding 
+//Error feedback if participants exceeds the time for responding
 const count_time = function(data, next) {
      if (typeof window.timeout === 'undefined'){
          window.timeout = [];
@@ -28,7 +28,7 @@ const count_time = function(data, next) {
      // clear old timeouts and remove them from the timeout array
      clearTimeout(window.timeout[0]);
      window.timeout.shift();
-     // add the timeout to the timeoutarray 
+     // add the timeout to the timeoutarray
      window.timeout.push(setTimeout(function(){
          alert("You take too long");
      }, 1000));

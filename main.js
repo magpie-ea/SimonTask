@@ -13,12 +13,12 @@ $("document").ready(function() {
     window.babe_monitor = babeInit({
 		views_seq:[
             intro,
-            instructions,
-			instruction_practice,
-			practice_session,
-			instruction_test, 
-			test_session,
-            instructionsPostTest,
+            // instructions,
+            // instruction_practice,
+            practice_session,
+            // instruction_test,
+            // test_session,
+            // instructionsPostTest,
             post_test,
             thanks,
         ],
