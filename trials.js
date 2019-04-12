@@ -1,12 +1,19 @@
-
 //Rotation of conditions (key press to circle/square)
 const key_targets = _.shuffle(['circle', 'square']);
 const p_target = key_targets[0];
 const q_target = key_targets[1];
 
+const instructions_p_is_circle = "<strong>Whenever you see a <b>square</b>, please press the 'q' key </strong> on your keyboard, <strong>whenever you see a <b>cirlce</b>, please press the 'p' key</strong> - regardless of the position of the shape.";
+const instructions_p_is_square = "<strong>Whenever you see a <b>circle</b>, please press the 'q' key </strong> on your keyboard, <strong>whenever you see a <b>square</b>, please press the 'p' key</strong> - regardless of the position of the shape.";
+
+console.log("The shape for key P is " + p_target);
+
+const key_press_instruction_message = p_target == 'circle' ?
+      instructions_p_is_circle :
+      instructions_p_is_square ;
 
 //Error feedback if participants exceeds the time for responding 
- const count_time = function(data, next) {
+const count_time = function(data, next) {
      if (typeof window.timeout === 'undefined'){
          window.timeout = [];
      }

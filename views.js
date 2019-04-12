@@ -16,8 +16,7 @@ const intro = babeViews.intro({
     title: 'Welcome, nice to see you',
     text:   `<b>Thank you for participating in out experiment! </b><br>
 	<br>
-	<br>
-	You will need around <b>13 min</b> to complete the experiment. Please make sure that you will not be distracted. Switch off all messaging systems, your phone, any background music etc., and try to concentrate on the task at hand.
+	You will need around <b>13 min</b> to complete the experiment. Please <strong>make sure that you will not be distracted</strong>. Switch off all messaging systems, your phone, any background music etc., and try to concentrate as much as possible on the task at hand.
   <br>
 	<br>
 	Click on the button below to proceed with <b>detailed instructions</b>.
@@ -29,14 +28,9 @@ const instructions = babeViews.instructions({
 	trials:1,
 	name: 'instructions',
 	text: `In this experiment you will be shown two types of geometric figures: a <b>square</b> and a <b>circle</b>. On each trial, exactly one of these shapes will be displayed, either on the <b>left or right</b> part of your screen.
-            <br>
-			Whenever you see a <b>square</b>, please press the <strong>"q"</strong> key on your keyboard, whenever you see 
-            a <b>circle</b>, please press the <strong>"p"</strong> key - regardless of the position of the shape. 
-            <br>
-            Plese try to press the key as <b>soon as possible</b> while also trying to make as <b>few errors</b> as you can.
-            <br> 
-            <br>
-            Before the actual experiment starts, a <b>practice session</b> will give you the possibility to familiarize yourself with the task.
+            <br>` + key_press_instruction_message +
+            `<br> Plese try to press the key as <b>soon as possible</b> while also trying to make as <b>few errors</b> as you can.
+            <br> <br> Before the actual experiment starts, a <b>practice session</b> will give you the possibility to familiarize yourself with the task.
 			`
 });
 			
