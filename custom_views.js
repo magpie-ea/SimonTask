@@ -17,6 +17,7 @@ const keyPress_simontask = function(config) {
                 const viewTemplate = `<div class="babe-view">
                     <h1 class='babe-view-title'>${this.title}</h1>
                     <p class='babe-response-keypress-header'><strong>${key1}</strong> = ${value1}, <strong>${key2}</strong> = ${value2}</p>
+                    <p class='babe-response-keypress-header' id = 'reminder'></p>
                     <div class='babe-view-stimulus-container'>
                         <div class='babe-view-stimulus babe-nodisplay'></div>
                     </div>
@@ -33,7 +34,7 @@ const keyPress_simontask = function(config) {
 
                     if (keyPressed === key1 || keyPressed === key2) {
                         let correctness;
-                        const RT = Date.now() - startingTime - pause; // measure RT before anything else
+                        const RT = Date.now() - startingTime; // measure RT before anything else
 
                         if (
                             config.data[CT].expected ===
@@ -91,15 +92,32 @@ const keyPress_simontask = function(config) {
                     }
                 };
 
-                $(".babe-view").append(answerContainerElem);
-                $("body").on("keydown", handleKeyPress);
-
                 const enableResponse = function() {
                     // $(".babe-view").append(answerContainerElem);
                     // $("body").on("keydown", handleKeyPress);
                 };
 
-                startingTime = Date.now();
+                // brutal hackery here:
+                // calling what is normally in `enable response` exactly when the
+                // fixation cross makes way for the stimulus; also start clocking RT
+                // at this point in time
+                // CAVEAT :: this number must correspond to the `fix_duration` used
+                // in `views.js`
+
+                setTimeout(
+                    function(){
+                        $(".babe-view").append(answerContainerElem);
+                        startingTime = Date.now();
+                        $("body").on("keydown", handleKeyPress);
+                    },
+                    pause + 200);
+
+                // reminder to hurry up
+                setTimeout(
+                    function(){
+                        $('#reminder').text('Please answer more quickly!');
+                    },
+                    pause + 3000);
 
                 // creates the DOM of the trial view
                 babeUtils.view.createTrialDOM(

@@ -114,14 +114,18 @@ const thanks = babeViews.thanks({
 For that reason, I also increased the durations a bit towards those numbers. 
 */
 const practice_session = keyPress_simontask({
-    trials: 1,
+    trials: 5,
     name: 'practice_session',
     trial_type: 'practice',
     data: simonTask_info.keyPress_practice,
-  	fix_duration: 2200,
+  	fix_duration: 200,
   	stim_duration: 500,
   	pause: 500,
-  	//hook: {after_response_enabled: count_time}
+//   	hook: {after_fix_point: function(data, next){
+//         $(".babe-view").append(answerContainerElem);
+//         $("body").on("keydown", handleKeyPress);
+//         next();
+//     }}
 });
 
 const test_session = keyPress_simontask({
