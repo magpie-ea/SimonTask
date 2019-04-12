@@ -20,18 +20,19 @@ const key_press_instruction_message_short = p_target == 'circle' ?
 
 
 
-//Error feedback if participants exceeds the time for responding
+
+//Error feedback if participants exceeds the time for responding, and hides stimulus
 const count_time = function(data, next) {
      if (typeof window.timeout === 'undefined'){
          window.timeout = [];
      }
-     // clear old timeouts and remove them from the timeout array
-     clearTimeout(window.timeout[0]);
-     window.timeout.shift();
      // add the timeout to the timeoutarray
      window.timeout.push(setTimeout(function(){
           $(".babe-view-stimulus").addClass("babe-invisible");
      }, 500));
+     window.timeout.push(setTimeout(function(){
+           $('#reminder').text('Please answer more quickly!');
+     }, 3000));
 
  };
 
@@ -208,4 +209,3 @@ const test =  {
 
 simonTask_info.keyPress_test = _.shuffle(simonTask_info.keyPress_test)
 simonTask_info.keyPress_practice = _.shuffle(simonTask_info.keyPress_practice)
-

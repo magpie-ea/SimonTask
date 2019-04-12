@@ -17,6 +17,7 @@ const keyPress_simontask = function(config) {
                 const viewTemplate = `<div class="babe-view">
                     <h1 class='babe-view-title'>${this.title}</h1>
                     <p class='babe-response-keypress-header'><strong>${key1}</strong> = ${value1}, <strong>${key2}</strong> = ${value2}</p>
+                    <p class='babe-response-keypress-header' id = 'reminder'></p>
                     <div class='babe-view-stimulus-container'>
                         <div class='babe-view-stimulus babe-nodisplay'></div>
                     </div>
@@ -34,6 +35,12 @@ const keyPress_simontask = function(config) {
                     if (keyPressed === key1 || keyPressed === key2) {
                         let correctness;
                         const RT = Date.now() - startingTime; // measure RT before anything else
+                        // clear old timeouts and remove them from the timeout array
+                        console.log(window.timeout)
+                        clearTimeout(window.timeout[0]);
+                        window.timeout.shift();
+                        clearTimeout(window.timeout[0]);
+                        window.timeout.shift();
 
                         if (
                             config.data[CT].expected ===
