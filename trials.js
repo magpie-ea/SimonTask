@@ -2,15 +2,23 @@
 const key_targets = _.shuffle(['circle', 'square']);
 const p_target = key_targets[0];
 const q_target = key_targets[1];
-
-const instructions_p_is_circle = "<strong>Whenever you see a <b>square</b>, please press the 'q' key </strong> on your keyboard, <strong>whenever you see a <b>cirlce</b>, please press the 'p' key</strong> - regardless of the position of the shape.";
-const instructions_p_is_square = "<strong>Whenever you see a <b>circle</b>, please press the 'q' key </strong> on your keyboard, <strong>whenever you see a <b>square</b>, please press the 'p' key</strong> - regardless of the position of the shape.";
-
 console.log("The shape for key P is " + p_target);
 
+// text for general instructions
+const instructions_p_is_circle = "<strong>Whenever you see a <b>square</b>, please press the 'q' key </strong> on your keyboard, <strong>whenever you see a <b>cirlce</b>, please press the 'p' key</strong> - regardless of the position of the shape.";
+const instructions_p_is_square = "<strong>Whenever you see a <b>circle</b>, please press the 'q' key </strong> on your keyboard, <strong>whenever you see a <b>square</b>, please press the 'p' key</strong> - regardless of the position of the shape.";
 const key_press_instruction_message = p_target == 'circle' ?
       instructions_p_is_circle :
       instructions_p_is_square ;
+
+// text for short (recap) instructions
+const short_instructions_p_is_circle = "Remember that <strong>'q'</strong> is for <strong>square</strong>, and <strong>'p'</strong> is for <strong>circle</strong>.";
+const short_instructions_p_is_square = "Remember that <strong>'q'</strong> is for <strong>circle</strong>, and <strong>'p'</strong> is for <strong>square</strong>.";
+const key_press_instruction_message_short = p_target == 'circle' ?
+      short_instructions_p_is_circle :
+      short_instructions_p_is_square ;
+
+
 
 //Error feedback if participants exceeds the time for responding 
 const count_time = function(data, next) {

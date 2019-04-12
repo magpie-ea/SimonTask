@@ -39,12 +39,7 @@ const instruction_practice = babeViews.instructions({
     trials: 1,
 	name: 'instruction_practice',
 	title: 'Instruction Practice Session',
-    text: `<br>Press  <strong>"p"</strong> whenever you see a <b>square</b> and
-	<br>
-	press <strong>"q"</strong> whenever you see a <b>circle</b>.
-	<br>
-	<br>
-	Be as <b>fast</b> and as <b>accurate</b> as possible.`,
+    text: `We are now going to practice the task.<br><br>` + key_press_instruction_message_short + `<br><br>Be as <strong>fast</strong> and as <strong>accurate</strong> as possible.`,
 	buttonText: 'Start practice'
 });
 
@@ -53,14 +48,9 @@ const instruction_test = babeViews.begin({
     trials: 1,
 	name: 'instruction_test',
 	title: 'Instruction Test Session',
-    text: `<b>Very good!</b><br>
-		The next part will be the test session.
-		<br>
-		<br>Press  <strong>"p"</strong> whenever you see a <b>square</b> and
-	press <strong>"q"</strong> whenever you see a <b>circle</b>.
-	<br>
-	<br>
-	Be as <b>fast</b> and as <b>accurate</b> as possible.`,
+    text: `<b>Very good!</b> The next part will be the actual test session.<br><br>` +
+        key_press_instruction_message_short +
+        `<br><br>Be as <b>fast</b> and as <b>accurate</b> as possible.`,
 	buttonText: 'Start Test'
 });
 
@@ -136,7 +126,7 @@ const thanks = babeViews.thanks({
 For that reason, I also increased the durations a bit towards those numbers. 
 */
 const practice_session = keyPress_simontask({
-    trials: 10,
+    trials: 1,
     name: 'practice_session',
     trial_type: 'KeyPress',
     data: simonTask_info.keyPress_practice,
@@ -147,7 +137,7 @@ const practice_session = keyPress_simontask({
 });
 
 const test_session = keyPress_simontask({
-	trials: 48,
+	trials: 5,
 	name: 'test_session',
 	trial_type: 'KeyPress',
 	data: simonTask_info.keyPress_test,
