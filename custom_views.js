@@ -34,7 +34,10 @@ const keyPress_simontask = function(config) {
 
                     if (keyPressed === key1 || keyPressed === key2) {
                         let correctness;
-                        clearTimeout(timer_reminder); // stop timer until reminder to answer quickly
+
+                        clearTimeout(timer_reminder); // stop timer until reminder to answer    quickly
+                        $(".babe-view-stimulus").addClass("babe-invisible"); // hide stim for optical feedback
+
                         const RT = Date.now() - startingTime; // measure RT before anything else
 
                         if (
@@ -89,7 +92,16 @@ const keyPress_simontask = function(config) {
 
                         babe.trial_data.push(trial_data);
                         $("body").off("keydown", handleKeyPress);
-                        babe.findNextView();
+
+                        setTimeout(
+                            function(){
+                                babe.findNextView();
+                                $(".babe-view-stimulus").addClass("babe-visible");
+                            },
+                            config.stim_duration
+                        ); // make sure the next stimulus is visible even if response happened before the timeout
+
+
                     }
                 };
 
@@ -111,7 +123,7 @@ const keyPress_simontask = function(config) {
                         startingTime = Date.now();
                         $("body").on("keydown", handleKeyPress);
                     },
-                    pause + 200);
+                    pause + config.fix_duration);
 
                 // reminder to hurry up
                 const timer_reminder = setTimeout(

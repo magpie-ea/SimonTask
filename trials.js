@@ -205,6 +205,5 @@ const test =  {
         _.flattenDeep(babeUtils.views.loop([babeUtils.views.loop(practice.circle, 2), babeUtils.views.loop(practice.square,2)],5))
 };
 
-simonTask_info.keyPress_test = _.shuffle(simonTask_info.keyPress_test)
-simonTask_info.keyPress_practice = _.shuffle(simonTask_info.keyPress_practice)
-
+simonTask_info.keyPress_test = _.shuffle(simonTask_info.keyPress_test);
+simonTask_info.keyPress_practice = _.shuffle(simonTask_info.keyPress_practice);
