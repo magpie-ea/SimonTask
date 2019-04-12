@@ -34,6 +34,7 @@ const keyPress_simontask = function(config) {
 
                     if (keyPressed === key1 || keyPressed === key2) {
                         let correctness;
+                        clearTimeout(timer_reminder); // stop timer until reminder to answer quickly
                         const RT = Date.now() - startingTime; // measure RT before anything else
 
                         if (
@@ -113,7 +114,7 @@ const keyPress_simontask = function(config) {
                     pause + 200);
 
                 // reminder to hurry up
-                setTimeout(
+                const timer_reminder = setTimeout(
                     function(){
                         $('#reminder').text('Please answer more quickly!');
                     },
