@@ -14,13 +14,13 @@ const intro = babeViews.intro({
     trials: 1,
     name: 'intro',
     title: 'Welcome, nice to see you',
-    text:   `<b>Thank you for participating in advance! </b><br>
+    text:   `<b>Thank you for participating in out experiment! </b><br>
 	<br>
-	In the following you will conduct a so-called <b>Simon Task</b>, where your task will be ask to press a certain key dependent on the presented picture.<br>
-    <br>
-	You will need around <b>13 min</b> to complete the experiment.<br>
 	<br>
-	If you want to <b>start</b> please click on the button below to proceede with <b>detailed instructions</b>.
+	You will need around <b>13 min</b> to complete the experiment. Please make sure that you will not be distracted. Switch off all messaging systems, your phone, any background music etc., and try to concentrate on the task at hand.
+  <br>
+	<br>
+	Click on the button below to proceed with <b>detailed instructions</b>.
     `,
     buttonText: 'Begin the experiment'
 });
@@ -28,16 +28,16 @@ const intro = babeViews.intro({
 const instructions = babeViews.instructions({
 	trials:1,
 	name: 'instructions',
-	text: `In this experiment you will be shown a <b>square</b> or a <b>circle</b>, either on the <b>left or right</b> part of your screen.
+	text: `In this experiment you will be shown two types of geometric figures: a <b>square</b> and a <b>circle</b>. On each trial, exactly one of these shapes will be displayed, either on the <b>left or right</b> part of your screen.
             <br>
 			Whenever you see a <b>square</b>, please press the <strong>"q"</strong> key on your keyboard, whenever you see 
-            a <b>circle</b>, please press the <strong>"p"</strong> key - regardless of the position of the symbol. 
+            a <b>circle</b>, please press the <strong>"p"</strong> key - regardless of the position of the shape. 
             <br>
             Plese try to press the key as <b>soon as possible</b> while also trying to make as <b>few errors</b> as you can.
             <br> 
             <br>
-            Before the actual experiment starts, a <b>practice session</b> will give you the possibility to familiarize with the task.
-			An information site after the practice session will announce when the test session starts.`
+            Before the actual experiment starts, a <b>practice session</b> will give you the possibility to familiarize yourself with the task.
+			`
 });
 			
 
