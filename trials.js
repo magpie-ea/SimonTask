@@ -120,7 +120,7 @@ const conditions = [
  ];
 
 const nr_trials_practice = 20;
-const nr_trials_test = 80;
+const nr_trials_test = 100;
 
 create_n_trials = function(nr_trials) {
     return _.map(_.range(nr_trials), function() {return _.sample(conditions);});
