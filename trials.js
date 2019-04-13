@@ -23,17 +23,19 @@ const key_press_instruction_message_short = p_target == 'circle' ?
 
 //Error feedback if participants exceeds the time for responding, and hides stimulus
 const count_time = function(data, next) {
-     if (typeof window.timeout === 'undefined'){
-         window.timeout = [];
-     }
-     // add the timeout to the timeoutarray
-     window.timeout.push(setTimeout(function(){
-          $(".babe-view-stimulus").addClass("babe-invisible");
-     }, 500));
-     window.timeout.push(setTimeout(function(){
-           $('#reminder').text('Please answer more quickly!');
-     }, 3000));
-
+    console.log("function call count_time");
+    if (typeof window.timeout === 'undefined'){
+        console.log("inside first Boolean");
+        window.timeout = [];
+    }
+    // add the timeout to the timeoutarray
+    window.timeout.push(setTimeout(function(){
+         $(".babe-view-stimulus").addClass("babe-invisible");
+    }, 500));
+    window.timeout.push(setTimeout(function(){
+          $('#reminder').text('Please answer more quickly!');
+    }, 3000));
+    next();
  };
 
 //practice condition

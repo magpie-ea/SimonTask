@@ -36,7 +36,8 @@ const keyPress_simontask = function(config) {
                         let correctness;
                         const RT = Date.now() - startingTime; // measure RT before anything else
                         // clear old timeouts and remove them from the timeout array
-                        console.log(window.timeout)
+                        console.log(window);
+                        console.log(window.timeout);
                         clearTimeout(window.timeout[0]);
                         window.timeout.shift();
                         clearTimeout(window.timeout[0]);

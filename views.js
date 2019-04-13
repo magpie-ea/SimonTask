@@ -114,14 +114,14 @@ const thanks = babeViews.thanks({
 For that reason, I also increased the durations a bit towards those numbers. 
 */
 const practice_session = keyPress_simontask({
-    trials: 1,
+    trials: 7,
     name: 'practice_session',
     trial_type: 'practice',
     data: simonTask_info.keyPress_practice,
-  	fix_duration: 2200,
+  	fix_duration: 200,
     //stim_duration: 500, // this hides the stimulus after 500ms!
     //pause: 500, // random pause generated in the custom_view
-  	hook: {after_response_enabled: count_time}
+  	hook: {after_fix_point: count_time}
 });
 
 const test_session = keyPress_simontask({
