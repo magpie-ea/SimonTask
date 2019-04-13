@@ -33,12 +33,18 @@ const keyPress_simontask = function(config) {
                     ).toLowerCase();
 
                     if (keyPressed === key1 || keyPressed === key2) {
-                        let correctness;
 
-                        clearTimeout(timer_reminder); // stop timer until reminder to answer    quickly
-                        $(".babe-view-stimulus").addClass("babe-invisible"); // hide stim for optical feedback
+                        // $(".babe-view-stimulus").addClass("babe-invisible"); // hide stim for optical feedback
 
                         const RT = Date.now() - startingTime; // measure RT before anything else
+
+                        let correctness;
+
+                        // clear old timeouts and remove them from the timeout array
+                        clearTimeout(window.timeout[0]);
+                        window.timeout.shift();
+                        clearTimeout(window.timeout[0]);
+                        window.timeout.shift();
 
                         if (
                             config.data[CT].expected ===
@@ -105,32 +111,16 @@ const keyPress_simontask = function(config) {
                     }
                 };
 
+                //$(".babe-view").append(answerContainerElem);
+                //$("body").on("keydown", handleKeyPress);
+
                 const enableResponse = function() {
-                    // $(".babe-view").append(answerContainerElem);
-                    // $("body").on("keydown", handleKeyPress);
+                     $(".babe-view").append(answerContainerElem);
+                     $("body").on("keydown", handleKeyPress);
+                     startingTime = Date.now();
                 };
 
-                // brutal hackery here:
-                // calling what is normally in `enable response` exactly when the
-                // fixation cross makes way for the stimulus; also start clocking RT
-                // at this point in time
-                // CAVEAT :: this number must correspond to the `fix_duration` used
-                // in `views.js`
-
-                setTimeout(
-                    function(){
-                        $(".babe-view").append(answerContainerElem);
-                        startingTime = Date.now();
-                        $("body").on("keydown", handleKeyPress);
-                    },
-                    pause + config.fix_duration);
-
-                // reminder to hurry up
-                const timer_reminder = setTimeout(
-                    function(){
-                        $('#reminder').text('Please answer more quickly!');
-                    },
-                    pause + 3000);
+                //startingTime = Date.now();
 
                 // creates the DOM of the trial view
                 babeUtils.view.createTrialDOM(
