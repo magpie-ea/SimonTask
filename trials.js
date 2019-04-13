@@ -18,9 +18,6 @@ const key_press_instruction_message_short = p_target == 'circle' ?
       short_instructions_p_is_circle :
       short_instructions_p_is_square ;
 
-
-
-
 //Error feedback if participants exceeds the time for responding, and hides stimulus
 const count_time = function(data, next) {
     console.log("function call count_time");
@@ -38,176 +35,96 @@ const count_time = function(data, next) {
     next();
  };
 
-//practice condition
-const practice =  {
-	  circle: [
-        {
-            key1: 'q',
-            key2: 'p',
-			q: q_target,
-			p: p_target,
-			expected: 'circle' === p_target? p_target : q_target,
-			canvas: {
-                focalColor: 'blue',
-                focalShape: 'circle',
-                focalNumber: 1,
-                elemSize: 100,
-                total: 2,
-                start_with: 'focal',
-                otherShape: 'square',
-                otherColor: 'white',
-                sort: 'split_grid'
-			}
-        },
-        {
-            key1: 'q',
-            key2: 'p',
-			q: q_target,
-			p: p_target,
-			expected: 'circle' === p_target? p_target : q_target,
-			canvas: {
-                focalColor: 'white',
-                focalShape: 'square',
-                focalNumber: 1,
-                elemSize: 100,
-                total: 2,
-                start_with: 'focal',
-                otherShape: 'circle',
-                otherColor: 'blue',
-                sort: 'split_grid'
-			}
-        }
-	  ],
-	  square: [
-		{
-			key1: 'q',
-            key2: 'p',
-			q: q_target,
-			p: p_target,
-			expected: 'square' === p_target? p_target : q_target,
-			canvas: {
-                focalColor: 'blue',
-                focalShape: 'square',
-                focalNumber: 1,
-                elemSize: 100,
-                total: 2,
-                start_with: 'other',
-                otherShape: 'circle',
-                otherColor: 'white',
-                sort: 'split_grid'
-			}
-		},
-		{
-			key1: 'q',
-            key2: 'p',
-			q: q_target,
-			p: p_target,
-			expected: 'square' === p_target? p_target : q_target,
-			canvas: {
-                focalColor: 'white',
-                focalShape: 'square',
-                focalNumber: 1,
-                elemSize: 100,
-                total: 2,
-                start_with: 'other',
-                otherShape: 'square',
-                otherColor: 'blue',
-                sort: 'split_grid'
-			}
-		}
-	  ]
- };
+// all 2x2 major conditions
+const conditions = [
+    { // target: circle, position: left
+        key1: 'q',
+        key2: 'p',
+			  q: q_target,
+			  p: p_target,
+        target_object: "circle",
+        target_position: "left",
+        condition: q_target == "circle" ? 'congruent' : 'incongruent',
+			  canvas: {
+            focalColor: 'blue',
+            focalShape: 'circle',
+            focalNumber: 1,
+            elemSize: 100,
+            total: 2,
+            start_with: 'focal',
+            otherShape: 'square',
+            otherColor: 'white',
+            sort: 'split_grid'
+			  }
+    },
+    { // target: circle, position: right
+        key1: 'q',
+        key2: 'p',
+			  q: q_target,
+			  p: p_target,
+        target_object: "circle",
+        target_position: "right",
+        condition: q_target == "circle" ? 'incongruent' : 'congruent',
+			  canvas: {
+            focalColor: 'blue',
+            focalShape: 'circle',
+            focalNumber: 1,
+            elemSize: 100,
+            total: 2,
+            start_with: 'other',
+            otherShape: 'square',
+            otherColor: 'white',
+            sort: 'split_grid'
+			  }
+    },
+    { // target: square, position: left
+        key1: 'q',
+        key2: 'p',
+			  q: q_target,
+			  p: p_target,
+        target_object: "square",
+        target_position: "left",
+        condition: q_target == "square" ? 'congruent' : 'incongruent',
+			  canvas: {
+            focalColor: 'blue',
+            focalShape: 'square',
+            focalNumber: 1,
+            elemSize: 100,
+            total: 2,
+            start_with: 'focal',
+            otherShape: 'circle',
+            otherColor: 'white',
+            sort: 'split_grid'
+			  }
+    },
+    { // target: square, position: right
+        key1: 'q',
+        key2: 'p',
+			  q: q_target,
+			  p: p_target,
+        target_object: "square",
+        target_position: "right",
+        condition: q_target == "square" ? 'incongruent' : 'congruent',
+			  canvas: {
+            focalColor: 'blue',
+            focalShape: 'square',
+            focalNumber: 1,
+            elemSize: 100,
+            total: 2,
+            start_with: 'other',
+            otherShape: 'circle',
+            otherColor: 'white',
+            sort: 'split_grid'
+			  }
+    }
+ ];
 
+const nr_trials_practice = 5;
+const nr_trials_test = 10;
 
-//test condition
-const test =  {
-	circle: [
-        {
-            key1: 'q',
-            key2: 'p',
-			q: q_target,
-			p: p_target,
-			expected: 'circle' === p_target? p_target : q_target,
-			canvas: {
-                focalColor: 'blue',
-                focalShape: 'circle',
-                focalNumber: 1,
-                elemSize: 100,
-                total: 2,
-                start_with: 'focal',
-                otherShape: 'square',
-                otherColor: 'white',
-                sort: 'split_grid'
-			}
-        },
-        {
-            key1: 'q',
-            key2: 'p',
-			q: q_target,
-			p: p_target,
-			expected: 'circle' === p_target? p_target : q_target,
-			canvas: {
-                focalColor: 'white',
-                focalShape: 'square',
-                focalNumber: 1,
-                elemSize: 100,
-                total: 2,
-                start_with: 'focal',
-                otherShape: 'circle',
-                otherColor: 'blue',
-                sort: 'split_grid'
-			}
-        }
-	],
-	square: [
-		{
-			key1: 'q',
-            key2: 'p',
-			q: q_target,
-			p: p_target,
-			expected: 'square' === p_target? p_target : q_target,
-			canvas: {
-                focalColor: 'blue',
-                focalShape: 'square',
-                focalNumber: 1,
-                elemSize: 100,
-                total: 2,
-                start_with: 'other',
-                otherShape: 'circle',
-                otherColor: 'white',
-                sort: 'split_grid'
-			}
-		},
-		{
-			key1: 'q',
-            key2: 'p',
-			q: q_target,
-			p: p_target,
-			expected: 'square' === p_target? p_target : q_target,
-			canvas: {
-                focalColor: 'white',
-                focalShape: 'circle',
-                focalNumber: 1,
-                elemSize: 100,
-                total: 2,
-                start_with: 'other',
-                otherShape: 'square',
-                otherColor: 'blue',
-                sort: 'split_grid'
-			}
-		}
-	]
- };
+create_n_trials = function(nr_trials) {
+    return _.map(_.range(nr_trials), function() {return _.sample(conditions);});
+}
 
-
-//loops and randomisation of trials
- const simonTask_info = {
-    keyPress_test:
-        _.flattenDeep(babeUtils.views.loop([babeUtils.views.loop(practice.circle, 2), babeUtils.views.loop(practice.square,2)],2))
-    ,
-    keyPress_practice:
-        _.flattenDeep(babeUtils.views.loop([babeUtils.views.loop(practice.circle, 2), babeUtils.views.loop(practice.square,2)],5))
-};
-
-simonTask_info.keyPress_test = _.shuffle(simonTask_info.keyPress_test);
-simonTask_info.keyPress_practice = _.shuffle(simonTask_info.keyPress_practice);
+trial_info_practice = create_n_trials(nr_trials_practice);
+trial_info_test = create_n_trials(nr_trials_test);
