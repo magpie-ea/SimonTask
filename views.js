@@ -121,7 +121,7 @@ const practice_session = keyPress_simontask({
   	fix_duration: 200,
     //stim_duration: 500, // this hides the stimulus after 500ms!
     //pause: 500, // random pause generated in the custom_view
-  	hook: {after_fix_point: count_time}
+  	hook: {after_response_enabled: count_time}
 });
 
 const test_session = keyPress_simontask({
