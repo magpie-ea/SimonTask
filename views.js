@@ -16,7 +16,7 @@ const intro = babeViews.intro({
     title: 'Welcome, nice to see you!',
     text:   `<b>Thank you for participating in our experiment! </b><br>
 	<br>
-	You will need around <b>15 min</b> to complete the experiment. Please <strong>make sure that you will not be distracted</strong>. Switch off all messaging systems, your phone, any background music etc., and try to concentrate as much as possible on the task at hand.
+	You will need around <b>10 min</b> to complete the experiment. Please <strong>make sure that you will not be distracted</strong>. Switch off all messaging systems, your phone, any background music etc., and try to concentrate as much as possible on the task at hand.
   <br>
 	<br>
 	Click on the button below to <b>receive instructions</b>.
@@ -27,9 +27,9 @@ const intro = babeViews.intro({
 const instructions = babeViews.instructions({
 	trials:1,
 	name: 'instructions',
-	text: `In this experiment you will be shown two types of geometric figures: a square and a circle. On each trial, you will first see a fixation cross in the middle of the screen, which prompts you that the next trial is about to start. please <strong>center you gaze at the fixation cross at the start of each trial</strong>. When the fixation cross disappears, exactly one of the shapes (square or circle) will be displayed, either on the <b>left or right</b> part of your screen.
+	text: `In this experiment you will be shown two types of geometric figures: a square and a circle. On each trial, you will first see a fixation cross in the middle of the screen, which prompts you that the next trial is about to start. Please <strong>center your gaze at the fixation cross at the start of each trial</strong>. When the fixation cross disappears, exactly one of the shapes (square or circle) will be displayed, either on the <b>left or right</b> part of your screen.
             <br><br>` + key_press_instruction_message +
-        `<br><br> Plese try to <strong>press the key as soon as possible while also trying to make as few errors as you can</strong>.
+        `<br><br> Please try to <strong>press the key as soon as possible while also trying to make as few errors as you can</strong>.
             <br> <br> Before the actual experiment starts, a practice session will give you the possibility to familiarize yourself with the task.
 			`
 });
