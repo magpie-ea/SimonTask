@@ -47,7 +47,7 @@ const keyPress_simontask = function(config) {
                         window.timeout.shift();
 
                         if (
-                            config.data[CT].expected ===
+                            config.data[CT].target_object ===
                             config.data[CT][keyPressed.toLowerCase()]
                         ) {
                             correctness = "correct";

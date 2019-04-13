@@ -119,8 +119,8 @@ const conditions = [
     }
  ];
 
-const nr_trials_practice = 5;
-const nr_trials_test = 10;
+const nr_trials_practice = 10;
+const nr_trials_test = 20;
 
 create_n_trials = function(nr_trials) {
     return _.map(_.range(nr_trials), function() {return _.sample(conditions);});
