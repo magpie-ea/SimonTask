@@ -58,20 +58,20 @@ const instructionsPostTest = babeViews.instructions({
     trials: 1,
     name: 'instructions_post_test',
     title: 'Post Questionnaire',
-    text: `We are almost done! Please finish the experiment by leaving some (optional) information. Make sure that you leave your student ID (a.k.a. Matrikelnummer).`
+    text: `We are almost done! Please finish the experiment by leaving some (optional) information. Make sure that you leave your student ID (a.k.a. Matrikelnummer) and the course you are doing this experiment for.`
 });
 
 const post_test = babeViews.postTest({
     trials: 1,
     name: 'post_test',
     title: 'Additional information',
-    text: 'Answering the following questions is optional, except that <strong>you have to enter your student ID if you need course credit.</strong>',
+    text: 'Answering the following questions is optional, except that <strong>you have to enter your student ID  and indicate the course you are doing this experiment for, if you need course credit.</strong>',
     languages_question: '<strong>Student ID</strong>',
     languages_more: '(obligatory for course credit!)',
-    edu_question: 'Study program',
-    edu_graduated_high_school: 'CogSci BSc',
-    edu_graduated_college: 'CogSci MSc',
-    edu_higher_degree: 'other'
+    edu_question: 'Which course are you taking part in?',
+    edu_graduated_high_school: 'Intro Cogn. Neuro-Psychology',
+    edu_graduated_college: 'Experimental Psych Lab',
+    edu_higher_degree: 'both'
 });
 
 // the 'thanks' view is crucial; never delete it; it submits the results!

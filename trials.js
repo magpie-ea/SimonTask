@@ -20,9 +20,7 @@ const key_press_instruction_message_short = p_target == 'circle' ?
 
 //Error feedback if participants exceeds the time for responding, and hides stimulus
 const count_time = function(data, next) {
-    console.log("function call count_time");
     if (typeof window.timeout === 'undefined'){
-        console.log("inside first Boolean");
         window.timeout = [];
     }
     // add the timeout to the timeoutarray
@@ -118,6 +116,9 @@ const conditions = [
 			  }
     }
  ];
+
+// const nr_trials_practice = 2;
+// const nr_trials_test = 2;
 
 const nr_trials_practice = 20;
 const nr_trials_test = 100;
