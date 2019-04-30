@@ -25,7 +25,7 @@ $("document").ready(function() {
         deploy: {
             experimentID: "52",
             serverAppURL: "https://mcmpact.ikw.uni-osnabrueck.de/babe/api/submit_experiment/",
-            deployMethod: "directLink",
+            deployMethod: "debug",
             contact_email: "michael.franke@uni-osnabrueck.de",
             prolificURL: "unnecessary"
         },
