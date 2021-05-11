@@ -26,7 +26,7 @@ $("document")
       deploy: {
         experimentID: "51",
         serverAppURL: "https://mcmpact.ikw.uni-osnabrueck.de/magpie/api/submit_experiment/",
-        deployMethod: "directLink",
+        deployMethod: "debug",
         contact_email: "michael.franke@uni-osnabrueck.de",
         prolificURL: "unnecessary"
       },
