@@ -65,12 +65,12 @@ const post_test = magpieViews.view_generator("post_test", {
   name: 'post_test',
   title: 'Additional information',
   text: 'Answering the following questions is optional, except that <strong>you have to enter your student ID  and indicate the course you are doing this experiment for, if you need course credit.</strong>',
-  languages_question: '<strong>Student ID</strong>',
-  languages_more: '(obligatory for course credit!)',
-  edu_question: 'Which course are you taking part in?',
-  edu_graduated_high_school: 'Intro Cogn. Neuro-Psychology',
-  edu_graduated_college: 'Experimental Psych Lab',
-  edu_higher_degree: 'both'
+  languages_question: 'What is your native language?',
+  languages_more: '(name more than one if you have several)',
+  edu_question: 'What is your highest educational degree?',
+  edu_graduated_high_school: 'college',
+  edu_graduated_college: 'bachelor',
+  edu_higher_degree: 'master'
 });
 
 // the 'thanks' view is crucial; never delete it; it submits the results!
